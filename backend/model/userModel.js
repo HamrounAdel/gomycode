@@ -24,15 +24,17 @@ const userSchema =new mongoose.Schema({
    }, 
   role:{
     type:String,
-    default:"admin"
+    enum: ['admin', 'Patient', 'Doctor'],
+    required: true,
+   
   },
   specialite:{
     type:String,
-    required:false
+    required: function() { return this.role === 'Doctor'; }
    },  
    numOrder:{
     type:String,
-    required:false
+    required: function() { return this.role === 'Doctor'; }
    },  
   
 

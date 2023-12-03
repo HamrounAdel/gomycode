@@ -16,7 +16,10 @@
     width: auto;
    /* margin: auto;*/
   }
-  
+  footer{
+    display: block;
+    justify-content: flex-end;
+  }
   .menu {
     float: right;
     list-style: none;

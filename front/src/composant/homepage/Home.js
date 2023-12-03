@@ -3,6 +3,7 @@ import './home.css'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
+import Footer from '../footer/Footer';
 function Home() {
   const navigate = useNavigate()
   const auth = useSelector(state => state.User)
@@ -29,17 +30,20 @@ function Home() {
          <Link to='/'><a >Acceuil</a></Link> 
         </li>
         <li>
+         <Link to=''><a >Contact</a></Link> 
+        </li>
+        <li>
          <Link to='/login'><a >se connecter</a></Link> 
         </li>
+        
       
       </ul>
      
     </div>
   </header>
-      <div className="banner-area">
-  
- 
+      <div className="banner-area"> 
 </div>
+<footer className=''><Footer/></footer>
 
     </div>
   )

@@ -15,23 +15,30 @@ function Navigation({auth,logout}) {
     <ul class="nav-list">
      
       {auth.role==="admin"?(<>
-      <a href="#">Acceuil</a>
-      <a href="#">Doctor</a>
-      <a href="#">Patient</a>
+        <li><a ><Link to=''>Acceuil</Link></a></li>
+      
 
       </>) :auth.role==="Patient"?(<>
 
-      <li><a ><Link to=''>Acceuil</Link></a></li>
-      <li><a ><Link to=''>Specialite</Link></a></li>
-      <li><a ><Link to=''>Prendre un RDV</Link></a></li>
+      <li><a ><Link to='/auth'>Acceuil</Link></a></li>
+      <li><a  ><Link to='/auth/rdv'>Prendre un RDV</Link></a></li>
+      <li><a ><Link to=''>Specialites medical</Link></a></li>
 
       </>):
-        (<><li><a ><Link to=''>Acceuil</Link></a></li>
+        (<><li><a ><Link to='/auth'>Acceuil</Link></a></li>
         <li><a ><Link to=''>consulter les RDVs</Link></a></li>
-        <li><a ><Link to=''>Patient</Link></a></li></>)}
+        <li><a ><Link to=''>consulter mes patient</Link></a></li>
+        
+        </>)}
 
-         <li><a  onClick={()=>logout()}>Deconnecte</a></li> 
-      
+         <li className='dropdown'><a >{auth.email}</a> 
+         <div className='dropdown-content'>
+         <ul>
+          <li><a><Link to='/auth/moncompte'>Mon Profil</Link></a></li>
+          <li><a  onClick={()=>logout()}>Deconnecter</a></li>
+         </ul>
+         </div>
+         </li>
     </ul>
   
   </nav>

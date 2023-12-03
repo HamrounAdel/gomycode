@@ -5,11 +5,10 @@ import {useDispatch,useSelector} from 'react-redux'
 import { useEffect } from 'react'
 import {getAccount} from '../../api/apiUser'
 import Admin from './Admin'
-import Users from './Users'
-import PatientCard from '../patient/cardPatient/PatientCard'
-import DoctorCard from '../doctor/cardDoctor/DoctorCard'
 import Login from '../login/Login'
 import Navigation from '../navbar/Navigation'
+import AcceuilPat from '../patient/AcceuilPatient/AcceuilPat'
+import AcceuilDoc from '../doctor/AcceuilDoctor/AcceuilDoc'
 function Authentifier() {
 
   const auth = useSelector(state=>state.User)
@@ -40,7 +39,7 @@ const token = localStorage.getItem('token')
       {
 token ? (<><Navigation auth={auth} logout={logout}   />
 {
-  auth.role === "admin" ?  <Admin/> :auth.role  === "Patient" ? <PatientCard/> :<DoctorCard/>
+  auth.role === "admin" ?  <Admin/> :auth.role  === "Patient" ? <AcceuilPat /> :<AcceuilDoc/>
 
 }</>):(<Login/>)
       }

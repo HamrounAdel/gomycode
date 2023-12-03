@@ -45,7 +45,9 @@ const [password,setPassword]=useState('')
   </header>
    
     <div className='bodylogin'>
-      
+    <div>
+    <img  src=''/>
+    </div>
     <div className="form-structor">
     <div className="signup">
       <h2 className="form-title" id="signup">

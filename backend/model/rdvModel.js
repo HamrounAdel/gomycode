@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const userSchema = require('./userModel')
 const rdvSchema = new mongoose.Schema({
     namePatient:{
         type:String,

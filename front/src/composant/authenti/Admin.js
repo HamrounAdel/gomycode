@@ -3,6 +3,8 @@ import './admin.css'
 
 function Admin() {
   return (
+    <div>
+
     <div className='htmladmin'>
       <div className='bodyadmin'>
     <div className="dashboard">
@@ -52,16 +54,16 @@ function Admin() {
         </a>
        
       </div>
-      
      
       <div className="nav-item-divider" />
-      <a href="#" className="dashboard-nav-item">
+      <a href="/" className="dashboard-nav-item">
         <i className="fas fa-sign-out-alt" /> Logout{" "}
       </a>
     </nav>
   </div>
   <div className="dashboard-app">
-    <header className="dashboard-toolbar">
+    <header className="">
+      
       <a href="#!" className="menu-toggle">
         <i className="fas fa-bars" />
       </a>
@@ -82,7 +84,7 @@ function Admin() {
 </div>
 </div>
 </div>
-
+</div>
   )
 }
 
