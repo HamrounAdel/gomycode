@@ -11,6 +11,7 @@ import Footer from './composant/footer/Footer';
 import Rdv from './composant/Rdv/Rdv';
 import PatientCard from './composant/patient/cardPatient/PatientCard'
 import AcceuilPat from './composant/patient/AcceuilPatient/AcceuilPat';
+import ListSpecialite from './composant/specialite/ListSpecialite';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
     <Route path='/footer'   element={<Footer/>}/>
     <Route path='/auth/rdv'   element={<Rdv/>}/>
     <Route path='/auth/moncompte' element={<PatientCard/>}/>
+    <Route path='' element={<ListSpecialite/>}/>
    </Routes>
     </div>
   );

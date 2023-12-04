@@ -11,15 +11,25 @@
   -moz-osx-font-smoothing: grayscale;
  background-repeat: no-repeat;
   background-size: 100%;
-  background-image: url('https://image.shutterstock.com/image-photo/image-260nw-1049387198.jpg')
+  background-image: url('')
 
 }
+.logs{
+  background-image: url('https://www.i-share.fr/wp-content/uploads/2020/09/198_app_rdv_medical_bis-700x425.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 570px;
+  width: 70%;
+  position: relative;
+  overflow: hidden;
+}
+
 
 .form-structor {
-  background-color: #222;
-  border-radius: 15px;
-  height: 470px;
-  width: 330px;
+  background-color: #585959;
+ 
+  height: 570px;
+  width: 360px;
   position: relative;
   overflow: hidden;
 }

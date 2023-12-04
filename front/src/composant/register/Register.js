@@ -66,9 +66,13 @@ function Register() {
     </div>
   </header>
     <div className='bodyRegester'>
-    <div className="wrapper">
+    <div className='logss'>
+
+</div>
+    <div className="">
+      
     <div className="registration_form">
-      <div className="title">Registration Form</div>
+      <div className="title">Sign up</div>
       <form>
         <div className="form_wrap">
 

@@ -5,6 +5,8 @@
 .bodynav {
     margin: 0;
     font-family: 'Segoe UI';
+    position: sticky;
+    top: 0;
   }
   .dropdown {
     cursor: pointer;

@@ -36,7 +36,7 @@ const [password,setPassword]=useState('')
          <Link to='/'><a >Acceuil</a></Link> 
         </li>
         <li>
-         <Link to='/register'><a >register</a></Link> 
+         <Link to='/register'><a >Register</a></Link> 
         </li>
       
       </ul>
@@ -45,13 +45,14 @@ const [password,setPassword]=useState('')
   </header>
    
     <div className='bodylogin'>
-    <div>
-    <img  src=''/>
+      
+    <div className='logs'>
+   
     </div>
     <div className="form-structor">
     <div className="signup">
       <h2 className="form-title" id="signup">
-        <span>or</span>Sign up
+        <span>or</span>Sign in 
       </h2>
       <div className="form-holder">
         
@@ -66,7 +67,7 @@ const [password,setPassword]=useState('')
          value={password}
         onChange={(e)=>setPassword(e.target.value)} />
       </div>
-      <button className="submit-btn" onClick={()=>handelLogin({email,password})} >Sign up</button>
+      <button className="submit-btn" onClick={()=>handelLogin({email,password})} >Connecter </button>
     </div>
     <div className="login slide-up">
       <div className="center">

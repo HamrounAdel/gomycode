@@ -8,7 +8,7 @@ function Navigation({auth,logout}) {
     <input type="checkbox" id="nav-check"/>
     <div className="nav-header">
       <div class="nav-title">
-      <span>{auth.name}</span>
+      <span>Espace:{auth.role}</span>
       </div>
     </div>
     
@@ -22,7 +22,7 @@ function Navigation({auth,logout}) {
 
       <li><a ><Link to='/auth'>Acceuil</Link></a></li>
       <li><a  ><Link to='/auth/rdv'>Prendre un RDV</Link></a></li>
-      <li><a ><Link to=''>Specialites medical</Link></a></li>
+      <li><a ><Link to='/auth/specialit'>Specialites medical</Link></a></li>
 
       </>):
         (<><li><a ><Link to='/auth'>Acceuil</Link></a></li>
