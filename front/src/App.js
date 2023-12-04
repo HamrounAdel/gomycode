@@ -5,14 +5,12 @@ import Login from './composant/login/Login';
 import Register from './composant/register/Register';
 import Home from './composant/homepage/Home';
 import {Routes,Route} from 'react-router-dom'
-import Navigation from './composant/navbar/Navigation';
 import Authentifier from './composant/authenti/Authentifier';
 import Footer from './composant/footer/Footer';
-import Rdv from './composant/Rdv/Rdv';
+import Rdv from './composant/Rdv/Rdv'; 
 import PatientCard from './composant/patient/cardPatient/PatientCard'
-import AcceuilPat from './composant/patient/AcceuilPatient/AcceuilPat';
 import ListSpecialite from './composant/specialite/ListSpecialite';
-
+import UpdatePatient from './composant/patient/updatePatient/UpdatePatient'
 function App() {
   return (
     <div className="App">
@@ -26,6 +24,7 @@ function App() {
     <Route path='/footer'   element={<Footer/>}/>
     <Route path='/auth/rdv'   element={<Rdv/>}/>
     <Route path='/auth/moncompte' element={<PatientCard/>}/>
+    <Route path='/auth/updateprofil/:id' element={<UpdatePatient/>}/>
     <Route path='' element={<ListSpecialite/>}/>
    </Routes>
     </div>

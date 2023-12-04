@@ -16,7 +16,7 @@ userRoutes.get('/moncompte',auth,(req,res)=>{
 
 // partie update profil user 
 //http://localhost:5003/auth/updateprofil/:id
-userRoutes.put('/updateprofil/:id',auth,updateUser)
+userRoutes.put('/updateprofil/:id',updateUser)
 
 //partie delete
 //http://localhost:5003/auth/deletprofil/:id

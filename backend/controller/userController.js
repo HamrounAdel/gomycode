@@ -48,19 +48,19 @@ exports.login=async(req,res)=>{
 exports.updateUser = async (req, res) => {
     const { id } = req.params;
     try {
-      if (req.body.password) {
+      /*if (req.body.password) {
         req.body.password = bcrypt.hashSync(req.body.password, 10);
-      }
+      }*/
       const updatedUser = await userSchema.findByIdAndUpdate(id, {
         $set: { ...req.body },
       });
       if (!updatedUser) {
         return res.status(400).json({ msg: "User not exist" });
       }
-      return res.status(200).send({ msg: "User updated" });
+      return res.status(200).send({ msg: "User updated" ,updatedUser});
     } catch (error) {
       console.log(err)
-      return res.status(500).send({ err: error });
+      return res.status(500).send({ err: err});
     }
   }
   exports.removeUser = async(req,res)=>{
