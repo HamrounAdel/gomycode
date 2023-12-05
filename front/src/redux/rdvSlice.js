@@ -4,7 +4,7 @@ const  rdvSlice=createSlice({
     initialState:([
            { 
         namePatient:"",
-        nameDoctor:"",
+        specialite:"",
         dateRDV:""
            },
          

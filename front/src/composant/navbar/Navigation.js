@@ -22,7 +22,8 @@ function Navigation({auth,logout}) {
 
       <li><a ><Link to='/auth'>Acceuil</Link></a></li>
       <li><a  ><Link to='/auth/rdv'>Prendre un RDV</Link></a></li>
-      <li><a ><Link to='/auth/specialit'>Specialites medical</Link></a></li>
+      <li><a ><Link to=''>Specialites medical</Link></a></li>
+      <li><a ><Link to='/auth/medecines'>Medecines</Link></a></li>
 
       </>):
         (<><li><a ><Link to='/auth'>Acceuil</Link></a></li>

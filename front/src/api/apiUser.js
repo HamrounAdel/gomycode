@@ -8,6 +8,10 @@ export const getAccount = async()=>{
     const {data} = await axios.get('http://localhost:5003/auth/moncompte',{headers:{Authorization:token}})
 return data 
 }
+export const  getAllUser =async()=>{
+    const {data} = await axios.get('http://localhost:5003/auth/getAll')
+    return data
+}
 export const putUser=async(id,values)=>{
     const updatUser= await axios.put(`http://localhost:5003/auth/updateprofil/${id}`,values)
 }

@@ -1,9 +1,9 @@
 import React from 'react'
-import './patientCard.css'
+import './doctorProfile.css'
 import {useSelector,useDispatch}from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import Navigation from '../../navbar/Navigation'
-function PatientCard() {
+function DoctorProfile() {
   const navigate = useNavigate()
   const auth = useSelector(state => state.User)
   const logout=()=>{
@@ -11,7 +11,7 @@ function PatientCard() {
     navigate('/login')
   }
   const handelEdite=()=>{
-    navigate(`/auth/updatprofil/${auth._id}`)
+    navigate(`/auth/updateprofil/${auth._id}`)
   }
   return (
     <>
@@ -38,4 +38,4 @@ function PatientCard() {
   )
 }
 
-export default PatientCard
+export default DoctorProfile

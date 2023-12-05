@@ -9,8 +9,10 @@ import Authentifier from './composant/authenti/Authentifier';
 import Footer from './composant/footer/Footer';
 import Rdv from './composant/Rdv/Rdv'; 
 import PatientCard from './composant/patient/cardPatient/PatientCard'
-import ListSpecialite from './composant/specialite/ListSpecialite';
-import UpdatePatient from './composant/patient/updatePatient/UpdatePatient'
+
+import UpdatePatient from './composant/patient/updatePatient/UpdatePatient';
+import  UpdateDoctor from './composant/doctor/updatDoctor/UpdateDoctor';
+import DoctorList from './composant/doctor/cardDoctor/DoctorList';
 function App() {
   return (
     <div className="App">
@@ -25,7 +27,9 @@ function App() {
     <Route path='/auth/rdv'   element={<Rdv/>}/>
     <Route path='/auth/moncompte' element={<PatientCard/>}/>
     <Route path='/auth/updateprofil/:id' element={<UpdatePatient/>}/>
-    <Route path='' element={<ListSpecialite/>}/>
+    <Route path='/auth/updatprofil/:id' element={<UpdateDoctor/> }/>
+    <Route path='/auth/medecines'  element={<DoctorList/>}/>
+    
    </Routes>
     </div>
   );

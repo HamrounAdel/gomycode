@@ -1,6 +1,6 @@
 const express =require('express')
 const userRoutes=express.Router()
-const {register,login,updateUser,removeUser}=require('../controller/userController')
+const {register,login,updateUser,removeUser,getAllUser}=require('../controller/userController')
 const {auth}=require('../midelware/middelAuthen')
 const {registerValidation,loginValidation,validation}=require('../midelware/middelValidation')
 //http://localhost:5003/auth/register
@@ -13,6 +13,8 @@ userRoutes.post('/login',loginValidation,validation,login)
 userRoutes.get('/moncompte',auth,(req,res)=>{
     res.send(req.user)
 })
+//http://localhost:5003/auth/getAll
+userRoutes.get('/getAll',getAllUser)
 
 // partie update profil user 
 //http://localhost:5003/auth/updateprofil/:id
