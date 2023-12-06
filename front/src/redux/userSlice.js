@@ -12,9 +12,7 @@ const userSlice =createSlice({
         role:"Doctor",
         specialite:"Orthopédiste",
         numOrder:"12345"
-
-
-    }
+          }
 ),
 reducers:{
 setUser:(state,action)=>{

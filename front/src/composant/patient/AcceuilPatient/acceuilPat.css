@@ -14,6 +14,16 @@
     width: 250px;
     height: 30px;
   }
+  .log select{
+    width: 250px;
+    height: 30px;
+  }
   .log button{
     width: 150px;
   }
+
+  .grid-container {
+    display: grid;
+    gap: 24px;
+   
+    grid-template-columns: repeat(3, 1fr)}

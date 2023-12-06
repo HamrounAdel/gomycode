@@ -19,7 +19,7 @@ function UpdateDoctor() {
   
   const handelupdate=async(id,value)=>{
    await putUser(id,value)
-   navigate('/auth/moncompte')
+   navigate('/auth/doctor/moncompte')
   }
   const logout = () => {
      

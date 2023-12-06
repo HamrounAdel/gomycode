@@ -95,3 +95,21 @@ exports.updateUser = async (req, res) => {
       res.status(500).json({ error: error.message });
     }
   };
+  exports.searchDoctors = async (req, res) => {
+    const { name, specialite, adress } = req.query;
+  
+    const doctors = await userSchema.find({
+      $or: [
+        { name: { $regex: new RegExp(name, 'i') } }, 
+        { specialite: { $regex: new RegExp(specialite, 'i') } },
+        { adress: { $regex: new RegExp(adress, 'i') } }, 
+      ],
+    });
+  
+    res.json(doctors);
+  };
+
+
+
+
+  

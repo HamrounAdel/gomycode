@@ -1,6 +1,6 @@
 const express =require('express')
 const userRoutes=express.Router()
-const {register,login,updateUser,removeUser,getAllUser}=require('../controller/userController')
+const {register,login,updateUser,removeUser,getAllUser,searchDoctors}=require('../controller/userController')
 const {auth}=require('../midelware/middelAuthen')
 const {registerValidation,loginValidation,validation}=require('../midelware/middelValidation')
 //http://localhost:5003/auth/register
@@ -23,5 +23,7 @@ userRoutes.put('/updateprofil/:id',updateUser)
 //partie delete
 //http://localhost:5003/auth/deletprofil/:id
 userRoutes.delete('/deletprofil/:id',auth,removeUser)
+
+userRoutes.get('/searchDoctors', searchDoctors);
 
 module.exports=userRoutes

@@ -8,11 +8,8 @@ import {Routes,Route} from 'react-router-dom'
 import Authentifier from './composant/authenti/Authentifier';
 import Footer from './composant/footer/Footer';
 import Rdv from './composant/Rdv/Rdv'; 
-import PatientCard from './composant/patient/cardPatient/PatientCard'
-
-import UpdatePatient from './composant/patient/updatePatient/UpdatePatient';
-import  UpdateDoctor from './composant/doctor/updatDoctor/UpdateDoctor';
 import DoctorList from './composant/doctor/cardDoctor/DoctorList';
+import Profile from './composant/patient/profile/ProfilPatient';
 function App() {
   return (
     <div className="App">
@@ -25,9 +22,8 @@ function App() {
     <Route path='/register' element={<Register/>}/>
     <Route path='/footer'   element={<Footer/>}/>
     <Route path='/auth/rdv'   element={<Rdv/>}/>
-    <Route path='/auth/moncompte' element={<PatientCard/>}/>
-    <Route path='/auth/updateprofil/:id' element={<UpdatePatient/>}/>
-    <Route path='/auth/updatprofil/:id' element={<UpdateDoctor/> }/>
+    <Route path='/auth/moncompte' element={<Profile/>}/>
+ 
     <Route path='/auth/medecines'  element={<DoctorList/>}/>
     
    </Routes>
