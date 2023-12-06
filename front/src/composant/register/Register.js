@@ -13,6 +13,7 @@ function Register() {
   const [specialite,setSpecialite] = useState('')
   const[numOrder,setNumOrder] = useState('')
   const [phone,setPhone] = useState('')
+  const [birthday,setBirthday] = useState('')
   const[show,setShow] = useState(false)
   const determineRoleValue = () => {
     return show ? 'Doctor' : 'Patient';
@@ -27,6 +28,7 @@ function Register() {
       password,
       role: roleValue,
       adress,
+      birthday,
       specialite,
       numOrder,
       phone,
@@ -100,12 +102,19 @@ function Register() {
              value={email}
              onChange={(e)=>setEmail(e.target.value)}/>
           </div>
-          
+          <div className="input_grp">
             <div className="input_wrap">
               <label htmlFor="password">Password</label>
               <input type="password" 
                value={password}
                onChange={(e)=>setPassword(e.target.value)} />
+            </div>
+            <div className="input_wrap">
+              <label htmlFor="date">Date de naissance</label>
+              <input type="date" 
+               value={birthday}
+               onChange={(e)=>setBirthday(e.target.value)} />
+            </div>
             </div>
             
           <div className="input_wrap">
@@ -179,7 +188,7 @@ function Register() {
               type="button"
               defaultValue="Register Now"
               className="submit_btn"
-              onClick={()=>handelregister({name,lastName,email,password,role,adress,specialite,numOrder,phone})}
+              onClick={()=>handelregister({name,lastName,email,birthday,password,role,adress,specialite,numOrder,phone})}
             />
           </div>
         </div>

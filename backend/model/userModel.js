@@ -11,7 +11,7 @@ const userSchema =new mongoose.Schema({
   },
   adress:{
     type:String,
-    
+    required:true,
   },
   password:{
     type:String,
@@ -31,6 +31,10 @@ const userSchema =new mongoose.Schema({
     enum: ['admin', 'Patient', 'Doctor'],
     required: true,
    
+  },
+  birthday:{
+    type:Date,
+    required:true,
   },
   specialite:{
     type:String,

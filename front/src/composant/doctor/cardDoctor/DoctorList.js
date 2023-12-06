@@ -1,4 +1,4 @@
-import React,{ useEffect }  from 'react'
+ import React,{ useEffect }  from 'react'
 
 import {useSelector,useDispatch}from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -13,26 +13,35 @@ function DoctorList() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const getUs = async () => {
-      const data = await getAllUser();
-      console.log('users', data);
-      dispatch(setUser(data))
+   useEffect(() => {
+    const getUs = async () => {
+      try {
+        const data = await getAllUser();
+        console.log('users', data);
+        
+        dispatch(setUser(data));
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      }
     };
-  useEffect(()=>{
-    getUs()
-  },[])
+
+    getUs();
+  }, [dispatch]);
 
   const logout=()=>{
     localStorage.removeItem('token')
     navigate('/login')
   }
-
+ const doctors = Array.isArray(auth)?auth .filter((el)=>(el.role === "Doctor")):[]
+ console.log('doctors filter',doctors)
+ 
   return (
     <div>
-      
+      <Navigation   auth={auth} logout={logout}/>
       <div>
       {
-      auth.filter((el)=>(el.role === "Doctor")).map((el)=> (<Doctor el = {el}/>))}
+      doctors .map((el)=> <Doctor key={el.id} el = {el}/>)
+      }
       </div>
     </div>
   )

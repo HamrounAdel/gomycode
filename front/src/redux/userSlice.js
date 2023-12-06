@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const userSlice =createSlice({
     name:'User',
-    initialState:(
-    { 
+    initialState: { 
         name:"Dr.Haddad",
         lastName:"nawfel",
         email:"Haddad@gmail.fr",
@@ -10,10 +9,11 @@ const userSlice =createSlice({
         adress:"mednine",
         phone:"12345678",
         role:"Doctor",
+        birthday:"12/04/1983",
         specialite:"Orthopédiste",
         numOrder:"12345"
-          }
-),
+          },
+
 reducers:{
 setUser:(state,action)=>{
  return  action.payload

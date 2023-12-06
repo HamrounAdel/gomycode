@@ -14,6 +14,7 @@ function Profile() {
   const[name,setName]=useState('')
   const[lastName,setLastName]=useState('')
   const[email,setEmail]=useState('')
+  const[birthday,setBirthday]=useState('')
   const[adress,setAdress]=useState('')
   const[phone,setPhone]=useState('')
   const[password,setPassword]=useState('')
@@ -27,6 +28,7 @@ function Profile() {
     setEmail(auth.email);
     setAdress(auth.adress);
     setPhone(auth.phone);
+    setBirthday(auth.birthday);
     setPassword(auth.password);
     setNewPassword('');
     setConfirmPassword('')
@@ -53,21 +55,20 @@ function Profile() {
       email,
       adress,
       phone,
+      birthday,
       password,
       newPassword,
       confirmPassword
     };
-    try {
+    
     await putUser(auth._id, updatedData);
     
-    dispatch(setUser(updatedData));
+    
     navigate('/auth/moncompte');
     setShow(false);
     alert("modifier avec succès !");
    
-  }catch (err){
-console.log(err)
-  }
+  
   
   };
 
@@ -75,12 +76,13 @@ console.log(err)
   
 
   return (
-    <div> 
+    <div className='bodyprofile'> 
+      
     <div className="container-xl px-4 mt-4">
   {/* Account page navigation*/}
   <Navigation  auth={auth} logout={logout}/>
-  <div className='bodyprofile'>
-  <hr className="mt-0 mb-4" />
+  <br/>
+  {/* <hr className="mt-0 mb-4" /> */}
   <div className="row">
     <div className="col-xl-4">
       {/* Profile picture card*/}
@@ -183,9 +185,10 @@ console.log(err)
                 <input
                   className="form-control"
                   id="inputLocation"
-                  type="txtdate"
+                  type="txt"
                   placeholder="Enter  your birthday"
-                  defaultValue=''
+                  defaultValue={auth.birthday}
+                  onChange={(e)=>setBirthday(e.target.value)}
                 />
               </div>
             </div>
@@ -285,7 +288,7 @@ console.log(err)
   </div>
   </div>
   
-</div>
+
 
 
   )

@@ -23,7 +23,6 @@ function App() {
     <Route path='/footer'   element={<Footer/>}/>
     <Route path='/auth/rdv'   element={<Rdv/>}/>
     <Route path='/auth/moncompte' element={<Profile/>}/>
- 
     <Route path='/auth/medecines'  element={<DoctorList/>}/>
     
    </Routes>
