@@ -3,87 +3,70 @@ import './footer.css'
 function Footer() {
   return (
     <div className=''>
-   <footer className="footer">
-  <div className="container row">
-    <div className="footer-col">
-      <h4>A propos de nous</h4>
-      <ul>
-        <li>
-          <a href="#">Qui sommes-nous ?</a>
-        </li>
-        <li>
-          <a href="#">Mentions légales et CGU</a>
-        </li>
-        <li>
-          <a href="#">Gestions des cookies</a>
-        </li>
-        <li>
-          <a href="#">visit website</a>
-        </li>
-      </ul>
-    </div>
-    <div className="footer-col">
-      <h4>Trouvez votre specialite</h4>
-      <ul>
-        <li>
-          <a href="#">Médecin généraliste</a>
-        </li>
-        <li>
-          <a href="#">Pédiatre</a>
-        </li>
-        <li>
-          <a href="#">Chirurgien dentiste</a>
-        </li>
-        <li>
-          <a href="#">Sage-femme</a>
-        </li>
-        <li>
-          <a href="#">Cardiologue</a>
-        </li>
-        <li>
-          <a href="#">Pédicure-podologue</a>
-        </li>
-        <li>
-          <a href="#">Ophtalmologue</a>
-        </li>
-      </ul>
-    </div>
-    <div className="footer-col">
-      <h4>informations et Articles</h4>
-      <ul>
-        <li>
-          <a href="#">Nos articles pharmacie</a>
-        </li>
-        <li>
-          <a href="#">Nos articles kiné</a>
-        </li>
-        <li>
-          <a href="#">Nos articles médecin généraliste</a>
-        </li>
-        <li>
-          <a href="#">Presse</a>
-        </li>
-      </ul>
-    </div>
-    <div className="footer-col">
-      <h4>Contact</h4>
-      <div className="social-links">
-        <a href="#">
-          <i className="fa-brands fa-facebook-f" />
-        </a>
-        <a href="#">
-          <i className="fa-brands fa-x-twitter" />
-        </a>
-        <a href="#">
-          <i className="fa-brands fa-instagram" />
-        </a>
-        <a href="#">
-          <i className="fa-brands fa-linkedin-in" />
-        </a>
+  <>
+  <link
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet"
+  />
+  <div className="footer">
+    <div className="container">
+      <div className="row text-center">
+        <div className="col-lg-12 col-sm-12 col-xs-12">
+          <div className="footer_menu">
+            <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Doctor</a>
+              </li>
+              <li>
+                <a href="#">Speciality medicale</a>
+              </li>
+              <li>
+                <a href="#">A propos</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div className="footer_copyright">
+            <p>© 2023 Sai. All Rights Reserved.</p>
+          </div>
+          <div className="footer_profile">
+            <ul>
+              <li>
+                <a href="#">
+                  <i className="fa fa-facebook" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="fa fa-twitter" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="fa fa-instagram" />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i className="fa fa-pinterest" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {/*- END COL */}
       </div>
+      {/*- END ROW */}
     </div>
+    {/*- END CONTAINER */}
   </div>
-</footer>
+</>
+
 
     </div>
   )

@@ -52,6 +52,7 @@ function Home() {
       <button>Trouver un medecine</button>
         </div>
       </div>
+      
   </div>
 <footer className=''><Footer/></footer>
 

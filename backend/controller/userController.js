@@ -48,9 +48,9 @@ exports.login=async(req,res)=>{
 exports.updateUser = async (req, res) => {
     const { id } = req.params;
     try {
-      /*if (req.body.password) {
+       if (req.body.password) {
         req.body.password = bcrypt.hashSync(req.body.password, 10);
-      }*/
+       }
       const updatedUser = await userSchema.findByIdAndUpdate(id, {
         $set: { ...req.body },
       });

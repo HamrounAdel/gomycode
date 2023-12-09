@@ -21,8 +21,13 @@ function Profile() {
   const[show,setShow]=useState(false)
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  }
+
   useEffect(() => {
-    // Mettez à jour les états locaux lorsque l'authentification change
     setName(auth.name);
     setLastName(auth.lastName);
     setEmail(auth.email);
@@ -38,17 +43,16 @@ function Profile() {
     localStorage.removeItem('token');
     navigate('/login');
   };
+
   const handelShow = () => {
     setShow(!show);
   };
 
   const handelupdate = async () => {
-    // Utilisez les états locaux mis à jour
     if (newPassword !== confirmPassword) {
       alert("Les nouveaux mots de passe ne correspondent pas.");
       return;
     }
-    
     const updatedData = {
       name,
       lastName,
@@ -60,30 +64,23 @@ function Profile() {
       newPassword,
       confirmPassword
     };
-    
     await putUser(auth._id, updatedData);
-    
-    
-    navigate('/auth/moncompte');
+   
     setShow(false);
     alert("modifier avec succès !");
-   
-  
-  
   };
 
-
-  
-
   return (
-    <div className='bodyprofile'> 
-      
+    
+    <div className='bodyprofile '> 
     <div className="container-xl px-4 mt-4">
   {/* Account page navigation*/}
   <Navigation  auth={auth} logout={logout}/>
-  <br/>
-  {/* <hr className="mt-0 mb-4" /> */}
-  <div className="row">
+  
+ 
+  <hr className="mt-0 mb-4" />
+  <div className='Container'>
+  {/* <div className="row  "> */}
     <div className="col-xl-4">
       {/* Profile picture card*/}
       <div className="card mb-4 mb-xl-0">
@@ -100,23 +97,30 @@ function Profile() {
             JPG or PNG no larger than 5 MB
           </div>
           {/* Profile picture upload button*/}
-          <button className="btn btn-primary" type="button">
+          {/* <input type="file" onChange={handleFileChange} /> */}
+          <button className="btn btn-primary" type="button" onClick={handleFileChange}>
             Upload new image
           </button>
         </div>
       </div>
     </div>
-    <div className="col-xl-8">
+    {/* </div> */}
+    
+    
+    
+    <div className='designe'>
+    <div className="col-xl-8 ">
       {/* Account details card*/}
-      <div className="card mb-4">
+      <div className="card mb-4 ">
         <div className="card-header">Account Details</div>
         <div className="card-body">
           <form>
             {/* Form Group (username)*/}
             <div className="mb-3">
               <label className="small mb-1" htmlFor="inputUsername">
-                Name(how your name will appear to other users on the site)
+               UserName
               </label>
+              
               <input
                 className="form-control"
                 id="inputUsername"
@@ -280,7 +284,7 @@ function Profile() {
               Save changes
             </button>
           </form>
-        
+          </div>
       </div>
     </div>
   </div>
@@ -288,7 +292,7 @@ function Profile() {
   </div>
   </div>
   
-
+ 
 
 
   )

@@ -10,6 +10,9 @@
     text-align:  center;
 
   }
+  h1{
+    color: black;
+  }
   .log input{
     width: 250px;
     height: 30px;

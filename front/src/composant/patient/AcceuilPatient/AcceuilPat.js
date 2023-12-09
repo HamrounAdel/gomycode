@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { setUser } from '../../../redux/userSlice';
-import { searchDoctors } from '../../../api/apiUser';
+import { searchDoctors ,getAllUser} from '../../../api/apiUser';
+
 import Doctor from '../../doctor/cardDoctor/Doctor';
 import './acceuilPat.css'
 function AcceuilPat() {
@@ -15,20 +16,32 @@ function AcceuilPat() {
    const handelShow = () => {
     setShow(!show);
   };
+  
 
+  const getUs = async () => {
+   const data = await getAllUser();
+      console.log('users', data);
+       dispatch(setUser(data.users));
+    } 
+    // useEffect(() => {
+    //   getUs();
+     
+    //  }, []);
 
   const handleSearch = async () => {
     try {
+      getUs();
       const data = await searchDoctors({ name: searchTerm ,
                                          specialite: searchSpeciality,
                                          adress: searchAdress });
       dispatch(setUser(data));
       handelShow()
+      
     } catch (error) {
       console.error('Error searching doctors:', error);
     }
   };
-  
+
   return (
     <div>
       
@@ -43,7 +56,7 @@ function AcceuilPat() {
         onChange={(e) => setSearchTerm(e.target.value)}
       /> 
       <select value={searchAdress} onChange={(e) => setSearchAdress(e.target.value)}>
-  <option value="">Sélectionnez une adresse</option>
+  <option defaultValue="">Sélectionnez une adresse</option>
   <option value="mednine">Mednine</option>
   <option value="tunis">Tunis</option>
   <option value="gabes">Gabès</option>
@@ -54,7 +67,7 @@ function AcceuilPat() {
 </select> 
 <select value={searchSpeciality} 
 onChange={(e) => setSearchSpeciality(e.target.value)}>
-  <option value="">Sélectionnez une spécialité</option>
+  <option defaultValue="">Sélectionnez une spécialité</option>
   <option value="Géneraliste">Géneraliste</option>
   <option value="Pédiatre">Pédiatre</option>
   <option value="Dentiste">Dentiste</option>
@@ -65,12 +78,12 @@ onChange={(e) => setSearchSpeciality(e.target.value)}>
      
       <button onClick={handleSearch}>Rechercher </button>
       
-      {/* 
-      {show &&  <div className='grid-container'>
-      {auth.filter((el)=>auth.role==='Doctor' ).filter((el)=>(el.name.toLowerCase().includes(searchTerm.toLowerCase().trim()))
+      
+       {show && (<div className='grid-container'>
+      {Object.values(auth).filter((el)=>auth.role==='Doctor' ).filter((el)=>(el.name.toLowerCase().includes(searchTerm.toLowerCase().trim()))
       && (el.specialite === searchSpeciality) &&  (el.adress === searchAdress))
       .map((el)=> (<Doctor el = {el}/>))}
-    </div>} */}
+    </div>)}
 
       </div>
       </div>

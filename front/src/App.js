@@ -10,11 +10,13 @@ import Footer from './composant/footer/Footer';
 import Rdv from './composant/Rdv/Rdv'; 
 import DoctorList from './composant/doctor/cardDoctor/DoctorList';
 import Profile from './composant/patient/profile/ProfilPatient';
+import Doctor from './composant/doctor/cardDoctor/Doctor';
 function App() {
   return (
-    <div className="App">
+    <div >
       
    <Routes>
+    <Route path='/doctor'  element={<Doctor/>}/>
     <Route path='/admin' element={<Admin/>}/>
     <Route path='/' element={<Home/>}/>
     <Route path='/auth' element={<Authentifier/>}/>

@@ -11,6 +11,7 @@ function Rdv() {
       localStorage.removeItem('token')
       navigate('/login')
     }
+    
   return (
     <>
     <Navigation auth={auth} logout={logout}   />
@@ -26,7 +27,7 @@ function Rdv() {
         </select>
         <label htmlFor="text">Selection un  Doctor :</label>
         <select type="select"  > 
-          <option>--------------------</option>
+          <option>{}</option>
         </select>
       </div><br/>
       <button >Prendre Rendez-vous</button>
