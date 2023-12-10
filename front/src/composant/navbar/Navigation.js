@@ -14,7 +14,7 @@ function Navigation({auth,logout}) {
     
     <ul class="nav-list">
      
-      {auth.role==="admin"?(<>
+      {auth.role==="Admin"?(<>
         <li><a ><Link to=''>Acceuil</Link></a></li>
         <li className='dropdown'><a >{auth.email}</a> 
          <div className='dropdown-content'>
@@ -34,7 +34,7 @@ function Navigation({auth,logout}) {
       <li className='dropdown'><a >{auth.email}</a> 
          <div className='dropdown-content'>
          <ul>
-          <li><a><Link to='/auth/moncompte'>Mon Profil</Link></a></li>
+          <li><a><Link to='/auth/patient/monprofile'>Mon Profil</Link></a></li>
           <li><a  onClick={()=>logout()}>Deconnecter</a></li>
          </ul>
          </div>
@@ -47,7 +47,7 @@ function Navigation({auth,logout}) {
         <li className='dropdown'><a >{auth.email}</a> 
          <div className='dropdown-content'>
          <ul>
-          <li><a><Link to=''>Mon Profil</Link></a></li>
+          <li><a><Link to='/auth/doctor/monprofile'>Mon Profil</Link></a></li>
           <li><a  onClick={()=>logout()}>Deconnecter</a></li>
          </ul>
          </div>

@@ -36,14 +36,9 @@ function Doctor({el}) {
           </a>
           <div className="contact-box-footer">
             <div className="m-t-xs btn-group">
+             
               <a className="btn btn-xs btn-white">
-                <i className="fa fa-phone" /> Call{" "}
-              </a>
-              <a className="btn btn-xs btn-white">
-                <i className="fa fa-envelope" /> Email
-              </a>
-              <a className="btn btn-xs btn-white">
-                <i className="fa fa-user-plus" /> Follow
+                <i className="fa fa-user-plus" /> Prendre un Rendez-Vous
               </a>
             </div>
           </div>

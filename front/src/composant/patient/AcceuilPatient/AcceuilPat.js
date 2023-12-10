@@ -8,6 +8,7 @@ import './acceuilPat.css'
 function AcceuilPat() {
   const auth = useSelector(state => state.User)
   const dispatch = useDispatch();
+  const [userList, setUserList] = useState([]);
   const [searchTerm, setSearchTerm] = useState('')
   const [searchSpeciality,setSearchSpeciality]=useState('')
    const [searchAdress,setSearchAdress]= useState('')
@@ -20,28 +21,35 @@ function AcceuilPat() {
 
   const getUs = async () => {
    const data = await getAllUser();
-      console.log('users', data);
-       dispatch(setUser(data.users));
+   console.log('users from getUs', data.users);
+         setUserList(data.users);
+      // console.log('users', data);
+      //  dispatch(setUser(data.users));
     } 
-    // useEffect(() => {
-    //   getUs();
+     useEffect(() => {
+       getUs();
      
-    //  }, []);
+      }, []);
+      console.log("this is users list :", userList);
 
-  const handleSearch = async () => {
-    try {
-      getUs();
-      const data = await searchDoctors({ name: searchTerm ,
-                                         specialite: searchSpeciality,
-                                         adress: searchAdress });
-      dispatch(setUser(data));
-      handelShow()
+  // const handleSearch = async () => {
+  //   try {
       
-    } catch (error) {
-      console.error('Error searching doctors:', error);
-    }
-  };
-
+  //     const data = await searchDoctors({ name: searchTerm ,
+  //                                        specialite: searchSpeciality,
+  //                                        adress: searchAdress });
+                                         
+                                         
+  //   console.log('doctors from searchDoctors', data.doctors);
+  //        setUserList(data.doctors);
+  //     handelShow()
+      
+  //   } catch (error) {
+  //     console.error('Error searching doctors:', error);
+  //   }
+  // };
+ const search= Object.values(userList).filter((el)=>el.role==='Doctor' )
+console.log('search',search)
   return (
     <div>
       
@@ -57,13 +65,18 @@ function AcceuilPat() {
       /> 
       <select value={searchAdress} onChange={(e) => setSearchAdress(e.target.value)}>
   <option defaultValue="">Sélectionnez une adresse</option>
-  <option value="mednine">Mednine</option>
-  <option value="tunis">Tunis</option>
-  <option value="gabes">Gabès</option>
+  <option value="Mednine">Mednine</option>
+  <option value="Tunis">Tunis</option>
+  <option value="Gabes">Gabès</option>
   <option value="Sfax">Sfax</option>
-  <option value="ben Arous">ben Arous</option>
-  <option value="Nabel">Nabel</option>
-  <option value="Benzerte">Benzerte</option>
+  <option value="Ben Arous">ben Arous</option>
+  <option value="Nabel">Nabeul</option>
+  <option value="Tatawin">Tatawin</option>
+  <option value="Ariana">Ariana</option>
+  <option value="Monastir">Monastir</option>
+  <option value="sousse">Sousse</option>
+  <option value="Kairouan">Kairouan</option>
+  <option value="Le Kef">Le Kef</option>
 </select> 
 <select value={searchSpeciality} 
 onChange={(e) => setSearchSpeciality(e.target.value)}>
@@ -71,16 +84,17 @@ onChange={(e) => setSearchSpeciality(e.target.value)}>
   <option value="Géneraliste">Géneraliste</option>
   <option value="Pédiatre">Pédiatre</option>
   <option value="Dentiste">Dentiste</option>
-  <option value="Orthopédiste">Orthopédiste</option>
-  
+  <option value="Ophtalmologue">Ophtalmologue</option>
+  <option value="Ostéopathe">Ostéopathe</option>
+  <option value="Gastro-entérologue">Gastro-entérologue</option>
 </select>
 
      
-      <button onClick={handleSearch}>Rechercher </button>
+      <button onClick={handelShow}>Rechercher </button>
       
       
        {show && (<div className='grid-container'>
-      {Object.values(auth).filter((el)=>auth.role==='Doctor' ).filter((el)=>(el.name.toLowerCase().includes(searchTerm.toLowerCase().trim()))
+      {search.filter((el)=>(el.name.toLowerCase().includes(searchTerm.toLowerCase().trim()))
       && (el.specialite === searchSpeciality) &&  (el.adress === searchAdress))
       .map((el)=> (<Doctor el = {el}/>))}
     </div>)}

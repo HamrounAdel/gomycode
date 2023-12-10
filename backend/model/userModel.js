@@ -28,8 +28,9 @@ const userSchema =new mongoose.Schema({
    }, 
   role:{
     type:String,
-    enum: ['admin', 'Patient', 'Doctor'],
+    // enum: ['admin', 'Patient', 'Doctor'],
     required: true,
+    default:'Admin'
    
   },
   birthday:{

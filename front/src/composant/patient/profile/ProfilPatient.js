@@ -8,6 +8,7 @@ import { setUser } from '../../../redux/userSlice'
 function Profile() {
   const auth = useSelector(state => state.User)
   console.log('dgfjhk',auth)
+  const[userlist,setUserList]=useState([])
   const navigate = useNavigate()
   const dispatch=useDispatch()
   const {id}=useParams()
@@ -71,14 +72,14 @@ function Profile() {
   };
 
   return (
-    
-    <div className='bodyprofile '> 
+    <div>
+       
+    <div className='bodyprofile '>
+    <Navigation  auth={auth} logout={logout}/> 
     <div className="container-xl px-4 mt-4">
-  {/* Account page navigation*/}
-  <Navigation  auth={auth} logout={logout}/>
-  
- 
+   
   <hr className="mt-0 mb-4" />
+  <div>
   <div className='Container'>
   {/* <div className="row  "> */}
     <div className="col-xl-4">
@@ -90,15 +91,18 @@ function Profile() {
           <img
             className="img-account-profile rounded-circle mb-2"
             src="http://bootdey.com/img/Content/avatar/avatar1.png"
-            alt=""
+            // src={selectedFile}
+            alt="Profile"
           />
           {/* Profile picture help block*/}
           <div className="small font-italic text-muted mb-4">
             JPG or PNG no larger than 5 MB
           </div>
           {/* Profile picture upload button*/}
-          {/* <input type="file" onChange={handleFileChange} /> */}
-          <button className="btn btn-primary" type="button" onClick={handleFileChange}>
+          {/* <input type="file"
+          accept="image/*"
+           onChange={handleFileChange} /> */}
+          <button className="btn btn-primary" type="button" >
             Upload new image
           </button>
         </div>
@@ -291,8 +295,8 @@ function Profile() {
   </div>
   </div>
   </div>
-  
- 
+  </div>
+  </div>
 
 
   )

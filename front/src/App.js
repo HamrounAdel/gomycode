@@ -9,14 +9,17 @@ import Authentifier from './composant/authenti/Authentifier';
 import Footer from './composant/footer/Footer';
 import Rdv from './composant/Rdv/Rdv'; 
 import DoctorList from './composant/doctor/cardDoctor/DoctorList';
-import Profile from './composant/patient/profile/ProfilPatient';
+import ProfilPatient from './composant/patient/profile/ProfilPatient';
 import Doctor from './composant/doctor/cardDoctor/Doctor';
+import Patient from './composant/patient/cardPatient/Patient';
+import PatientList from './composant/patient/cardPatient/PatientList';
+import ProfilDoctor from './composant/doctor/profile/ProfilDoctor';
 function App() {
   return (
     <div >
       
    <Routes>
-    <Route path='/doctor'  element={<Doctor/>}/>
+    <Route path='/doctor'  element={<PatientList/>}/>
     <Route path='/admin' element={<Admin/>}/>
     <Route path='/' element={<Home/>}/>
     <Route path='/auth' element={<Authentifier/>}/>
@@ -24,7 +27,8 @@ function App() {
     <Route path='/register' element={<Register/>}/>
     <Route path='/footer'   element={<Footer/>}/>
     <Route path='/auth/rdv'   element={<Rdv/>}/>
-    <Route path='/auth/moncompte' element={<Profile/>}/>
+    <Route path='/auth/patient/monprofile' element={<ProfilPatient/>}/>
+    <Route path='/auth/doctor/monprofile' element={<ProfilDoctor/>}/>
     <Route path='/auth/medecines'  element={<DoctorList/>}/>
     
    </Routes>

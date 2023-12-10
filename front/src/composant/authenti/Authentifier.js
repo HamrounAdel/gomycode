@@ -39,7 +39,7 @@ const token = localStorage.getItem('token')
       {
 token ? (<><Navigation auth={auth} logout={logout}   />
 {
-  auth.role === "admin" ?  <Admin/> :auth.role  === "Patient" ? <AcceuilPat /> :<AcceuilDoc/>
+  auth.role === "Admin" ?  <Admin/> :auth.role  === "Patient" ? <AcceuilPat /> :<AcceuilDoc/>
 
 }</>):(<Login/>)
       }
