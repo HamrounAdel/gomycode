@@ -1,6 +1,6 @@
 import React from 'react'
 import './doctor.css'
-
+import { Link } from 'react-router-dom'
 function Doctor({el}) {
   
   return (
@@ -37,7 +37,7 @@ function Doctor({el}) {
           <div className="contact-box-footer">
             <div className="m-t-xs btn-group">
              
-              <a className="btn btn-xs btn-white">
+              <a className="btn btn-xs btn-white" >
                 <i className="fa fa-user-plus" /> Prendre un Rendez-Vous
               </a>
             </div>

@@ -108,6 +108,12 @@
     }
   }
   
-  
+  .dropdown  img {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    object-fit: cover; /* This property ensures the image scales uniformly */
+    border-radius: 50%; /* Optional: Makes the logo circular */
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
   
   

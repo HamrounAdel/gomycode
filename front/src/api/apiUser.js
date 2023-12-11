@@ -12,10 +12,10 @@ export const  getAllUser =async()=>{
     const {data} = await axios.get('http://localhost:5003/auth/getAll')
     return data
 }
-export const searchDoctors=async()=>{
-    const {data} = await axios.get('http://localhost:5003/auth/searchDoctors')
-    return data
-}
+// export const searchDoctors=async()=>{
+//     const {data} = await axios.get('http://localhost:5003/auth/searchDoctors')
+//     return data
+// }
 export const putUser=async(id,values)=>{
     const updatUser= await axios.put(`http://localhost:5003/auth/updateprofil/${id}`,values)
 }
